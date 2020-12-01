@@ -1,0 +1,1 @@
+var p=("https:"===document.location.protocol?"https:":"http:");document.write("<script src='"+p+"//cookies.missetservices.nl/script/cookiechecker/cookiejs.js?domain="+window.location.host+"' type='text/javascript'></script>");

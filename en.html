@@ -1,0 +1,1060 @@
+<!DOCTYPE html><!--[if IE]><![endif]-->
+<html class="no-js" xml:lang="en" lang="en-GB" xmlns:hx="http://purl.org/NET/hinclude" xmlns:og="http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b56ec2e35d",applicationID:"11896284"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+
+
+    
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <script type="text/javascript" src="js/ced9143.js"></script>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="//country.cdn.cevaws.com/css/96e03a8.css?202011303"  />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/5801d1c.css">
+
+    <link rel="stylesheet" type="text/css" href="css/3198407.css">
+
+    <link rel="stylesheet" type="text/css" href="css/080e491.css">
+
+
+    <!--Legacy css files-->
+    <title>Ceva Corporate website</title>
+    <meta name="description" content="Ceva Santé Animale is a global veterinary health company specialized in pharmaceutical products and vaccines for companion animal, livestock, swine and...">
+    <meta name="keywords" content="ceva, animal, health, veterinary, vaccines, livestock, swine, poultry, pets, france, libourne, laboratory, factory">
+    <meta name="robots" content="index,follow">
+    <meta name="include_mode" content="async">
+
+    <link rel="canonical" href="https://www.ceva.com/en">
+
+    <meta name="google-site-verification" content="-EPdoLACPInnNN2uyzfHGK9UjfKGGBiHEcHW3c7YLUU">
+    <meta property="og:site_name" content="Ceva Corporate">
+    <meta property="og:title" content="Ceva Corporate website">
+    <meta property="og:description" content="Ceva Santé Animale is a global veterinary health company specialized in pharmaceutical products and vaccines for companion animal, livestock, swine and...">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ceva.com/en">
+                <meta property="og:image" content="https://country.cdn.cevaws.com/bundles/cevacorecommon/img/ogimage/ogimage.png">
+    
+    <meta property="og:image" content="//country.cdn.cevaws.com/bundles/cevacountrysitecommon/images/logo-og.jpg">
+
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="//country.cdn.cevaws.com/bundles/cevacountrysitecommon/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="//country.cdn.cevaws.com/bundles/cevacountrysitecommon/images/favicons/ressources/images/favicons/browserconfig.xml">
+        
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+    </script>
+    <![endif]-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+
+    
+
+    
+<script type="text/javascript">
+dataLayer = [{"site":"ceva_com_en","site_name":"","language":"eng-GB","country_name":"United Kingdom","template":"frontpage","name_page":"Ceva Corporate","group_page":"divers_group","section_group":"","keywords":"","ga_property":"UA-9664627-2"}];
+var ceva_gtm = 'GTM-5KG6R9';
+</script>
+
+
+
+<script type="text/javascript">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5KG6R9');
+</script>
+
+</head>
+<body class="not-ie  lang-gb">
+
+<noscript><iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+    
+    <div id="page" class="home home--image">
+
+                                    <!-- Header area: START -->
+<header id="header">
+    <div class="header__top clearfix">
+        <div class="l-content">
+            <div class="header__left">
+                <h1 class="main-logo">
+                    <a href="javascript:;">
+                        <span><img src="bundles/cevacountrysitecommon/images/logo.jpg" alt="CEVA"></span>
+                        <span class="tagline">Together, beyond animal health</span>
+                    </a>
+                </h1>
+            </div>
+
+            <div class="header__right header__right--no-pro ">
+
+                                    <div id="header__user">
+                                                        <hx:include src="/_fragment?_path=serialized_siteaccess%3DO%253A38%253A%2522eZ%255CPublish%255CCore%255CMVC%255CSymfony%255CSiteAccess%2522%253A3%253A%257Bs%253A4%253A%2522name%2522%253Bs%253A11%253A%2522ceva_com_en%2522%253Bs%253A12%253A%2522matchingType%2522%253Bs%253A38%253A%2522compound%253AlogicalAnd%2528Map%255CURI%252C%2BMap%255CHost%2529%2522%253Bs%253A7%253A%2522matcher%2522%253BO%253A66%253A%2522eZ%255CPublish%255CCore%255CMVC%255CSymfony%255CSiteAccess%255CMatcher%255CCompound%255CLogicalAnd%2522%253A1%253A%257Bs%253A14%253A%2522%2500%252A%2500subMatchers%2522%253Ba%253A2%253A%257Bs%253A7%253A%2522Map%255CURI%2522%253BO%253A54%253A%2522eZ%255CPublish%255CCore%255CMVC%255CSymfony%255CSiteAccess%255CMatcher%255CMap%255CURI%2522%253A3%253A%257Bs%253A6%253A%2522%2500%252A%2500map%2522%253Ba%253A0%253A%257B%257Ds%253A13%253A%2522%2500%252A%2500reverseMap%2522%253Ba%253A0%253A%257B%257Ds%253A6%253A%2522%2500%252A%2500key%2522%253Bs%253A2%253A%2522en%2522%253B%257Ds%253A8%253A%2522Map%255CHost%2522%253BO%253A55%253A%2522eZ%255CPublish%255CCore%255CMVC%255CSymfony%255CSiteAccess%255CMatcher%255CMap%255CHost%2522%253A3%253A%257Bs%253A6%253A%2522%2500%252A%2500map%2522%253Ba%253A0%253A%257B%257Ds%253A13%253A%2522%2500%252A%2500reverseMap%2522%253Ba%253A0%253A%257B%257Ds%253A6%253A%2522%2500%252A%2500key%2522%253Bs%253A12%253A%2522www.ceva.com%2522%253B%257D%257D%257D%257D%26_format%3Dhtml%26_locale%3Den_GB%26_controller%3DCevaCountrySiteCommonBundle%253AUser%253Aheader&amp;_hash=1WW0NTEfJL0gRM60yJ2NbwnVD6iTPqZV1vV8xF%2BXVwg%3D" evaljs="true"></hx:include>
+                                            </div>
+                
+                
+                                    <div id="language_switcher" class="header__right__bloc header__right__bloc--country has-submenu">
+                            <button type="button" class="btn-reset header__right__bloc--controler">
+                                <span class="inner">
+                                    <span class="text">Select your country</span>
+                                </span>
+                            </button>
+                            
+
+    <div class="header__right__bloc__submenu">
+        <ul class="language_switcher_redirect switcher-split">
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/corpo.svg" alt="Corporate Website" style="width: 25px">
+                        Corporate Website
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/africa.svg" alt="Africa" style="width: 25px">
+                        Africa
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ar.svg" alt="Argentina" style="width: 25px">
+                        Argentina
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/asia.svg" alt="Asia" style="width: 25px">
+                        Asia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/au.svg" alt="Australia" style="width: 25px">
+                        Australia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/be.svg" alt="Belgium" style="width: 25px">
+                        Belgium
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/br.svg" alt="Brazil" style="width: 25px">
+                        Brazil
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/bg.svg" alt="Bulgaria" style="width: 25px">
+                        Bulgaria
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ca.svg" alt="Canada (EN)" style="width: 25px">
+                        Canada (EN)
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/cn.svg" alt="China" style="width: 25px">
+                        China
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/dk.svg" alt="Denmark" style="width: 25px">
+                        Denmark
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/eg.svg" alt="Egypt" style="width: 25px">
+                        Egypt
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/fr.svg" alt="France" style="width: 25px">
+                        France
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/de.svg" alt="Germany" style="width: 25px">
+                        Germany
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/gr.svg" alt="Greece" style="width: 25px">
+                        Greece
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/hu.svg" alt="Hungary" style="width: 25px">
+                        Hungary
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/id.svg" alt="Indonesia" style="width: 25px">
+                        Indonesia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/it.svg" alt="Italia" style="width: 25px">
+                        Italia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/in.svg" alt="India" style="width: 25px">
+                        India
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/jp.svg" alt="Japan" style="width: 25px">
+                        Japan
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/kr.svg" alt="Korea" style="width: 25px">
+                        Korea
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/my.svg" alt="Malaysia" style="width: 25px">
+                        Malaysia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/mx.svg" alt="Mexico" style="width: 25px">
+                        Mexico
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/middle_east.svg" alt="Middle East" style="width: 25px">
+                        Middle East
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/nl.svg" alt="Netherlands" style="width: 25px">
+                        Netherlands
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/pe.svg" alt="Peru" style="width: 25px">
+                        Peru
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ph.svg" alt="Philippines" style="width: 25px">
+                        Philippines
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/pl.svg" alt="Poland" style="width: 25px">
+                        Poland
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/pt.svg" alt="Portugal" style="width: 25px">
+                        Portugal
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ro.svg" alt="Romania" style="width: 25px">
+                        Romania
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ru.svg" alt="Russia" style="width: 25px">
+                        Russia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/za.svg" alt="South Africa" style="width: 25px">
+                        South Africa
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/es.svg" alt="Spain" style="width: 25px">
+                        Spain
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/se.svg" alt="Sweden" style="width: 25px">
+                        Sweden
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/th.svg" alt="Thailand" style="width: 25px">
+                        Thailand
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/tn.svg" alt="Tunisia" style="width: 25px">
+                        Tunisia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/tr.svg" alt="Turkey" style="width: 25px">
+                        Turkey
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ua.svg" alt="Ukraine" style="width: 25px">
+                        Ukraine
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/gb.svg" alt="United Kingdom" style="width: 25px">
+                        United Kingdom
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/us.svg" alt="USA" style="width: 25px">
+                        USA
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/vn.svg" alt="Vietnam" style="width: 25px">
+                        Vietnam
+                    </a>
+                </li>
+                    </ul>
+        <p>
+            You are leaving the country website to access another site in the group.
+        </p>
+        <p>
+            Regulatory constraints and medical practices vary from country to country. Consequently, the information provided on the site in which you enter may not be suitable for use in your country.
+        </p>
+    </div>
+                    </div>
+                
+                <div class="header__right__bloc header__right__bloc--search">
+                    <button type="button" class="inner nav-search-controler">
+                        <span class="text">Search</span>
+                        <img src="bundles/cevacountrysitecommon/images/search.png" alt="Search">
+                    </button>
+                    <form class="search-form" action="/en/search" method="GET">
+                        <div class="search-form__inner">
+                            <input type="text" id="header-search-input" name="SearchText" placeholder="Search" autocomplete="off">
+                            <button class="btn-search">
+                                <img src="bundles/cevacountrysitecommon/images/search.png" alt="Search">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                            </div>
+        </div>
+    </div>
+
+    <!-- Menu area: START -->
+    <div class="header__bottom">
+        <div class="l-content">
+                            <div class="mobile_search_bloc">
+                    <button type="button" class="inner mobile-search-controler">
+                        <img src="bundles/cevacountrysitecommon/images/search@2x.png" width="21" height="22" alt="Search">
+                    </button>
+                    <form class="search-form" action="/en/search" method="GET">
+                        <div class="search-form__inner">
+                            <input type="text" name="SearchText" placeholder="Search" autocomplete="off">
+                            <button class="btn-search">
+                                <img src="bundles/cevacountrysitecommon/images/search@2x.png" width="21" height="22" alt="Search">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                        <div class="header__right__bloc header__right__bloc--country has-submenu">
+                <button type="button" class="btn-reset header__right__bloc--controler">
+                        <span class="inner">
+                            <span class="text">Select your country</span>
+                        </span>
+                </button>
+                
+
+    <div class="header__right__bloc__submenu">
+        <ul class="language_switcher_redirect switcher-split">
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/corpo.svg" alt="Corporate Website" style="width: 25px">
+                        Corporate Website
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/africa.svg" alt="Africa" style="width: 25px">
+                        Africa
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ar.svg" alt="Argentina" style="width: 25px">
+                        Argentina
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/asia.svg" alt="Asia" style="width: 25px">
+                        Asia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/au.svg" alt="Australia" style="width: 25px">
+                        Australia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/be.svg" alt="Belgium" style="width: 25px">
+                        Belgium
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/br.svg" alt="Brazil" style="width: 25px">
+                        Brazil
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/bg.svg" alt="Bulgaria" style="width: 25px">
+                        Bulgaria
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ca.svg" alt="Canada (EN)" style="width: 25px">
+                        Canada (EN)
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/cn.svg" alt="China" style="width: 25px">
+                        China
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/dk.svg" alt="Denmark" style="width: 25px">
+                        Denmark
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/eg.svg" alt="Egypt" style="width: 25px">
+                        Egypt
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/fr.svg" alt="France" style="width: 25px">
+                        France
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/de.svg" alt="Germany" style="width: 25px">
+                        Germany
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/gr.svg" alt="Greece" style="width: 25px">
+                        Greece
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/hu.svg" alt="Hungary" style="width: 25px">
+                        Hungary
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/id.svg" alt="Indonesia" style="width: 25px">
+                        Indonesia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/it.svg" alt="Italia" style="width: 25px">
+                        Italia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/in.svg" alt="India" style="width: 25px">
+                        India
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/jp.svg" alt="Japan" style="width: 25px">
+                        Japan
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/kr.svg" alt="Korea" style="width: 25px">
+                        Korea
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/my.svg" alt="Malaysia" style="width: 25px">
+                        Malaysia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/mx.svg" alt="Mexico" style="width: 25px">
+                        Mexico
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/middle_east.svg" alt="Middle East" style="width: 25px">
+                        Middle East
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/nl.svg" alt="Netherlands" style="width: 25px">
+                        Netherlands
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/pe.svg" alt="Peru" style="width: 25px">
+                        Peru
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ph.svg" alt="Philippines" style="width: 25px">
+                        Philippines
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/pl.svg" alt="Poland" style="width: 25px">
+                        Poland
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/pt.svg" alt="Portugal" style="width: 25px">
+                        Portugal
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ro.svg" alt="Romania" style="width: 25px">
+                        Romania
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ru.svg" alt="Russia" style="width: 25px">
+                        Russia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/za.svg" alt="South Africa" style="width: 25px">
+                        South Africa
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/es.svg" alt="Spain" style="width: 25px">
+                        Spain
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/se.svg" alt="Sweden" style="width: 25px">
+                        Sweden
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/th.svg" alt="Thailand" style="width: 25px">
+                        Thailand
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/tn.svg" alt="Tunisia" style="width: 25px">
+                        Tunisia
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/tr.svg" alt="Turkey" style="width: 25px">
+                        Turkey
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/ua.svg" alt="Ukraine" style="width: 25px">
+                        Ukraine
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/gb.svg" alt="United Kingdom" style="width: 25px">
+                        United Kingdom
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/us.svg" alt="USA" style="width: 25px">
+                        USA
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:;">
+                        <img src="bundles/cevacorecommon/img/flags/vn.svg" alt="Vietnam" style="width: 25px">
+                        Vietnam
+                    </a>
+                </li>
+                    </ul>
+        <p>
+            You are leaving the country website to access another site in the group.
+        </p>
+        <p>
+            Regulatory constraints and medical practices vary from country to country. Consequently, the information provided on the site in which you enter may not be suitable for use in your country.
+        </p>
+    </div>
+            </div>
+            <button type="button" class="btn-reset mobile-show-menu">
+                <span class="inner">Menu</span>
+            </button>
+
+            <div class="clearer"></div>
+
+            <div class="header__menu">
+
+                <nav id="headerNav"><ul><li><span>Who are we?</span><div class="submenu"><ul><li><a href="javascript:;">Company overview</a><a href="javascript:;">Our history</a><a href="javascript:;">Our vision</a><a href="javascript:;">Our values</a><a href="javascript:;">Research and development</a><a href="javascript:;">Production</a><a href="javascript:;">Ethics and Compliance</a><a href="javascript:;">Alert System</a><a href="javascript:;">Global presence</a></li></ul></div></li><li><span>Products</span><div class="submenu"><ul><li><a href="javascript:;">Companion animals</a><a href="javascript:;">Cattle</a><a href="javascript:;">Poultry</a><a href="javascript:;">Small ruminants</a><a href="javascript:;">Swine</a></li></ul></div></li><li><span>News &amp; Media</span><div class="submenu"><ul><li><a href="javascript:;">Press releases</a><a href="javascript:;">Media Resources</a><a href="javascript:;">Annual reports</a></li></ul></div></li><li><span>Responsibility</span><div class="submenu"><ul><li><a href="javascript:;">Protecting global public health</a><a href="javascript:;">Feeding the world</a><a href="javascript:;">Health, happy people and animals</a><a href="javascript:;">Ceva and the community</a><a href="javascript:;">Business and scientific partnerships</a></li></ul></div></li><li><span>Careers</span><div class="submenu"><ul><li><a href="javascript:;">Our profiles</a><a href="javascript:;">Our jobs offers</a><a href="javascript:;">Our recruitment process</a><a href="javascript:;">Your personal growth</a><a href="javascript:;">Student page</a><a href="javascript:;">Experienced candidates</a><a href="javascript:;">Young Graduates</a></li></ul></div></li></ul></nav>
+            </div>
+        </div>
+    </div>
+    <!-- Menu area: END -->
+
+</header>
+<!-- Header area: END -->
+<!--Header ESI generated at '2020-11-29 23:20:37'-->
+
+                    
+        <!-- Content area: START -->
+        
+            
+                    <div class="home">
+
+                                                <script type="text/javascript">//<![CDATA[
+    function definePageClass(mediaType)
+    {
+        if ( mediaType == "" )
+        {
+            mediaType = "image";
+        }
+        var page = document.getElementById('page');
+        page.className = "home home--"+mediaType;
+    }
+
+    definePageClass('image');
+//]]></script>
+
+            <div class="bloc-deco bloc-deco--image">
+            <img id="img-bloc-deco" src="bundles/cevacountrysitecommon/images/transparent-image.png" alt="">
+                            <script type="text/javascript">//<![CDATA[
+                                        var imagesBackground = [
+                                                "//country.cdn.cevaws.com/var/ezflow_site/storage/images/_aliases/backgroundimage_home/media/ceva-corporate/images/mouton4/1007478-1-eng-GB/Mouton4.jpg",                                                "//country.cdn.cevaws.com/var/ezflow_site/storage/images/_aliases/backgroundimage_home/media/ceva-corporate/images/compa1/1007482-1-eng-GB/Compa1.jpg",                                                "//country.cdn.cevaws.com/var/ezflow_site/storage/images/_aliases/backgroundimage_home/media/ceva-corporate/images/background/dog_australia/654683-1-eng-GB/dog_australia.jpg",                                                "//country.cdn.cevaws.com/var/ezflow_site/storage/images/_aliases/backgroundimage_home/media/ceva-corporate/images/background/cow2013/654679-2-eng-GB/cow2013.jpg",                                                "//country.cdn.cevaws.com/var/ezflow_site/storage/images/_aliases/backgroundimage_home/media/ceva-corporate/images/background/chick/654691-2-eng-GB/chick.jpg"                                            ];
+                    var img = document.getElementById('img-bloc-deco');
+                    img.src = imagesBackground[ getRandomIndex(0, imagesBackground.length-1) ];
+                    
+                    function getRandomIndex(min, max)
+                    {
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
+                //]]></script>
+                    </div>
+    
+<!--Media background ESI generated at '2020-11-30 00:10:17'-->
+
+                            
+                                        
+                        <div class="home__actu  clearfix">
+    <div class="l-content">
+        <div id="wrapper-item-home">
+                                        <div class="item-news-home xsize-block ">
+    <div class="home__actu__title clearfix">
+        <h2>News</h2>
+
+                    <a href="javascript:;">See all</a>
+            </div>
+
+   <div class="home__actu__line home__actu__line--1">
+                                
+<a href="javascript:;" class="bloc actu-0 no-image">
+            <span class="bloc__text">
+            Announcing the winners of the 4th annual Global Animal Welfare Awards
+        </span>
+    </a>
+                                    
+<a href="javascript:;" class="bloc actu-1 no-image">
+            <span class="bloc__text">
+            Ceva builds on its preventative health strategy with opening of a new European reference for the manufacture of autogenous...
+        </span>
+    </a>
+                       </div>
+   <div class="home__actu__line home__actu__line--2">
+                              
+<a href="javascript:;" class="bloc actu-0 no-image">
+            <span class="bloc__text">
+            Covid-19 - Update to our customers
+        </span>
+    </a>
+                                 
+<a href="javascript:;" class="bloc actu-1 no-image">
+            <span class="bloc__text">
+            Ceva returns to strong double-digit growth in 2019 and reveals plans to double sales by 2025
+        </span>
+    </a>
+                     </div>
+</div>
+                                    
+    
+    
+<div class="item-news-home block-promo last-item">
+
+            <div class="home__actu__title clearfix">
+            <h2>STORIES</h2>
+        </div>
+    
+    <div class="sub-container">
+        <div>
+                                                <a href="javascript:;">
+                        <img width="289" height="367" src="var/ezflow_site/storage/images/_aliases/promohomepagenew_2/media/ceva-corporate/images/screenshot_vache/1850373-2-eng-GB/Screenshot_VACHE.jpg" alt="">                    </a>
+                                    </div>
+
+                    <div>
+                <a href="javascript:;"><span>Ceva is committed to preserving the health and welfare of animals, and to supporting the protection of biodiversity</span></a>
+            </div>
+            </div>
+
+</div>                    </div>
+    </div>
+</div>
+
+
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.ceva.com/en",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.ceva.com/en/search?SearchText={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+
+    
+        </div>
+                <!-- Content area: END -->
+
+                                    <!-- Footer area: START -->
+<footer id="footer">
+    <div class="l-content">
+
+        <div class="footer__info">
+            <div class="footer__info__top">
+
+                                    <div class="bloc bloc--left contact-us ">
+    <h2>    Contact us</h2>
+    <p>
+        <strong>    Ceva Santé Animale</strong><br>
+
+                        10 Avenue de la Ballastière<br>
+        
+                        33500 Libourne - France<br>
+        
+            </p>
+
+    <p>
+                    <a class="display-mobile" href="Tel: +33 5 57 55 40 40">
+                    Tel: +33 5 57 55 40 40
+            </a>
+            <span class="display-desktop">
+                    Tel: +33 5 57 55 40 40
+            </span>
+        
+                    <a class="display-mobile" href="javascript:;">
+                    Fax: +33 5 57 55 41 10
+            </a>
+            <span class="display-desktop">
+                    Fax: +33 5 57 55 41 10
+            </span>
+            </p>
+
+    <p>
+        
+    </p>
+</div>
+                
+                                        <div class="bloc bloc--product-list">
+        <h2>Our product websites</h2>
+        <ul>
+                            <li><a href="javascript:;" rel="noreferrer" target="_blank">Adaptil</a></li>
+                            <li><a href="javascript:;" rel="noreferrer" target="_blank">Immucox</a></li>
+                            <li><a href="javascript:;" rel="noreferrer" target="_blank">Poultry Services &amp; Equipment</a></li>
+                            <li><a href="javascript:;" rel="noreferrer" target="_blank">Transmune</a></li>
+                            <li><a href="javascript:;" rel="noreferrer" target="_blank">Vectormune</a></li>
+                            <li><a href="javascript:;" rel="noreferrer" target="_blank">Vectra</a></li>
+                                        <li>
+                    <a href="javascript:;">See all our products</a>
+                </li>
+            
+        </ul>
+    </div>
+                
+            </div>
+
+                            <div class="footer__info__bottom clearfix">
+                                            <a href="javascript:;" class="bloc bloc--left">
+                            <p class="title-links">
+                                All our websites&nbsp;&nbsp;<img src="bundles/cevacountrysitecommon/images/arrow-right-white-h15@2x.png" width="8" height="15" alt="">
+                            </p>
+                        </a>
+                    
+
+                    <a href="javascript:;" rel="noreferrer" target="_blank" class="bloc">
+                        <p class="title-links">Ceva Corporate website&nbsp;&nbsp;<img src="bundles/cevacountrysitecommon/images/arrow-right.png" alt=""></p>
+                    </a>
+
+                                        <div class="bloc bloc--right">
+                        <p>Change language</p>
+                        <ul>
+                                                                                                                <li class="current"><span>En</span></li>
+                                                                                                                                            <li><a href="javascript:;">Fr</a></li>
+                                                                            </ul>
+                    </div>
+                    
+                </div>
+            
+                            <div class="footer__share">
+                    <p>
+                        <span class="footer__share__text">Find us on social networks :</span>
+                <span class="footer__share__list">
+                                            <span class="footer__share__list__element"><a href="javascript:;" rel="noreferrer" target="_blank" class="footer__share__element footer__share__element--fb"></a></span>
+                                                                <span class="footer__share__list__element"><a href="javascript:;" rel="noreferrer" target="_blank" class="footer__share__element footer__share__element--tw"></a></span>
+                                                                <span class="footer__share__list__element"><a href="javascript:;" rel="noreferrer" target="_blank" class="footer__share__element footer__share__element--in"></a></span>
+                                                                <span class="footer__share__list__element"><a href="javascript:;" rel="noreferrer" target="_blank" class="footer__share__element footer__share__element--you"></a></span>
+                                                                <span class="footer__share__list__element"><a href="javascript:;" rel="noreferrer" target="_blank" class="footer__share__element footer__share__element--inst"></a></span>
+                                    </span>
+                    </p>
+                </div>
+                    </div>
+
+        <div class="footer__menu">
+            <ul>
+                <li>© Ceva 2020</li>
+                <li><a href="javascript:;">Sitemap</a></li>
+                <li><a href="javascript:void(0);" class="OpenCookieConsent">Cookies Policy</a></li>
+                                                            <li><a href="javascript:;">Contact</a></li>
+                                            <li><a href="javascript:;">RSS</a></li>
+                                            <li><a href="javascript:;">Privacy policy</a></li>
+                                            <li><a href="javascript:;">Legal notice</a></li>
+                                            <li><a href="javascript:;">Pharmacovigilance</a></li>
+                                                                </ul>
+        </div>
+
+    </div>
+</footer>
+    
+                                                                                                                                                
+    <!-- Footer area: END -->
+<!--Footer ESI generated at '2020-11-30 00:10:16'-->
+
+                    
+    </div>
+
+                        
+
+<!--Disclaimer ESI generated at '2020-12-01 06:09:29'-->
+
+
+
+    
+    <script type="text/javascript" src="bundles/cevacorecommon/js/hinclude/hinclude-0.9.5.js" defer="defer"></script>
+    <script type="text/javascript" src="bundles/cevacorecommon/js/lazysizes.min.js" async=""></script>
+
+    <script type="text/javascript" src="js/711ed8c.js"></script>
+
+    <!--Include script for ajax loading-->
+    <script type="text/javascript" src="var/ezflow_site/cache/public/javascript/c737f8568498940570d120a6e563c2e8.js" ></script>
+    <script type="text/javascript" src="js/8449a4c.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        if(parseInt($(window).width()) > 720){
+            $('.bloc-promo--video').fancybox({
+                maxWidth	: 800,
+                maxHeight	: 600,
+                fitToView	: false,
+                width		: '70%',
+                height		: '70%',
+                autoSize	: false,
+                closeClick	: false,
+                openEffect	: 'none',
+                closeEffect	: 'none'
+            });
+        }
+
+        $('#newsletter_subscribe_form').submit(function(){
+            $('.loader-form').css('display', 'table-cell');
+            var $this = $(this)
+            event.preventDefault();
+            $.ajax({
+                url: "/subscribe/newsletter",
+                context: document.body,
+                method:"POST",
+                data: $this.serialize(),
+            })
+            .success(function(){
+                displayReturnAjax(true);
+            })
+            .fail(function(){
+                displayReturnAjax(false);
+            })
+        })
+
+        function displayReturnAjax(status)
+        {
+            $('#newsletter_subscribe').css('display', 'none');
+            if (status)
+            {
+                $('#status_success').css('display', 'block');
+            }
+            else
+            {
+                $('#status_error').css('display', 'block');
+            }
+
+        }
+
+    });
+</script>
+
+    <script type="text/javascript" src="js/04be49c.js"></script>
+
+    <script type="text/javascript">
+            var cookie_banner_translations = {
+        'popincookie' : {
+            title: 'Your choice of cookies',
+            description: 'The\x20term\x20\x22cookies\x22\x20covers\x20all\x20the\x20tracers\x20deposited\x20on\x20your\x20computer\x20and\x20\x2F\x20or\x20read\x20from\x20it\x20when\x20consulting\x20a\x20website\x20or\x20a\x20mobile\x20application\x20or\x20when\x20consulting\x20an\x20advertisement.\x20They\x20aim\x20to\x20collect\x20information\x20about\x20your\x20browsing\x20sites\x20and\x20to\x20send\x20you\x20personalized\x20services.\x20\x3Ca\x20href\x3D\x22\x2Fredirect\x2Dto\x2Dprivacy\x23cookies\x22\x20target\x3D\x22_blank\x22\x3ELearn\x20more\x20about\x20cookies\x3C\x2Fa\x3E',
+            labelbutton : 'Save and Close',
+            labelOn : 'Enabled',
+            labelOff : 'Disabled',
+            mandatorycookie: {
+                title: 'Mandatory cookies',
+                description: 'These cookies are technical cookies necessary for the proper functioning of the site. The data stored in these cookies are not shared with third parties',
+                cookiesReadmore: {
+                    label: 'Learn more about mandatory cookies',
+                    content: 'lorem ipsum',
+                },
+            },
+            functionalcookie: {
+                title: 'Functional cookies',
+                description: 'These cookies are technical cookies that allow the site to remember your preferences and settings (language, currency, connection to an account, etc.).',
+                cookiesReadmore: {
+                    label: 'Learn more about functional cookies',
+                    content: 'lorem ipsum',
+                },
+            },
+            performancecookie: {
+                title: 'Performance cookies',
+                description: 'These cookies allow us to improve the performance of this site.',
+                cookiesReadmore: {
+                    label: 'Learn more about performance cookies',
+                    content: 'Lorem ipsum',
+                },
+            },
+            adscookie: {
+                title: 'Advertising cookies',
+                description: 'These cookies allow you to present advertisements tailored to your interests and measure the effectiveness of advertising campaigns. Refusing targeted advertising does not stop the display but no longer reflects your usage.',
+                cookiesReadmore: {
+                    label: 'Learn more about advertising cookies',
+                    content: 'Lorem ipsum',
+                },
+            },
+        },
+        'bannercookie' : {
+            title: 'By continuing your visit without modifying your browser settings, you accept the use of cookies and other tags to improve your user experience, conduct statistical analyses, personalise content, or offer you appropriate adverts.',
+            info: 'For more information and setting cookies',
+            ctaAccept: 'Proceed',
+            ctaPersonnalize: 'Learn more'
+        }
+    };
+</script>
+    <script type="text/javascript" src="js/fd7a9e2.js" defer="defer"></script>
+    <script type="text/javascript">
+        var current_location_id = 588;
+    </script>
+
+    <script type="text/javascript" src="bundles/cevacorecommon/js/ezwt/jquery-ui.1.11.2.js"></script>
+    
+
+            <!--Legacy js files-->
+            
+
+<!--ceva_ping-->
+<!--Page generated at '2020-12-01 06:48:05'-->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"b56ec2e35d","applicationID":"11896284","transactionName":"ZlZVYBEHV0VXUhBaWF8cdlcXD1ZYGVQebEJDX1ZYCgdK","queueTime":0,"applicationTime":196,"atts":"ShFWFlkdREs=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
